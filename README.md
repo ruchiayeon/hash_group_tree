@@ -1,30 +1,8 @@
-# React + TypeScript + Vite
+# Hash based Tree
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 목적
+기존 Tree 구조에서 순차 탐색으로 재귀를 지속적으로 돌아야하는 구조일 경우
+데이터 탐색에 있어서 시간이 "O(n)"으로 모수가 늘어날수록 UI상에 딜레이가 걸리는 현상을 확인
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+해당 문제를 해결하기 위해 검색에서 시간 복잡도를 "O(1)"을 가지는 Hashmap을 차용하여 
+Tree 구조를 구현하려 한다.
